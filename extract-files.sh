@@ -11,6 +11,10 @@ function blob_fixup() {
     vendor/lib/hw/camera.msm8953.so)
         sed -i "s|service.bootanim.exit|service.bootanim.hold|g" "${2}"
         ;;
+
+    vendor/lib/libmot_gpu_mapper.so | vendor/lib/libmmcamera_vstab_module.so | vendor/lib/libmmcamera_ppeiscore.so | vendor/lib/libmmcamera2_stats_modules.so)
+        sed -i "s/libgui/libwui/" "${2}"
+        ;;
    esac
 }
 
