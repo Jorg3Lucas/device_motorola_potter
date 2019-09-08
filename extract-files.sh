@@ -8,7 +8,10 @@
 
 function blob_fixup() {
     case "${1}" in
-    esac
+    vendor/lib/hw/camera.msm8953.so)
+        sed -i "s|service.bootanim.exit|service.bootanim.hold|g" "${2}"
+        ;;
+   esac
 }
 
 # If we're being sourced by the common script that we called,
