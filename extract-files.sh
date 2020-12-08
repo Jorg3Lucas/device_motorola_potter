@@ -19,6 +19,10 @@ function blob_fixup() {
     vendor/lib/libmmcamera2_stats_modules.so | vendor/lib/libmmcamera_vstab_module.so)
         patchelf --remove-needed libandroid.so "${2}"
         ;;
+
+    vendor/lib/libmmcamera2_sensor_modules.so)
+        sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "${2}"
+        ;;
    esac
 }
 
